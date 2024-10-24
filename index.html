@@ -3,6 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
   <link rel="stylesheet" href="assets/css/output.css">
   <title>Bro's Burger - A melhor hamburgueria da cidade</title>
 </head>
@@ -10,9 +14,9 @@
   <!--Header-->
   <header class="w-full h-[420px] bg-zinc-900 bg-home bg-cover bg-center">
     <div class="w-full h-full flex flex-col justify-center items-center">
-      <img src="assets/imagens/hamb-1.png" alt="Logo Bro's Burguer"
+      <img src="assets/imagens/hamb-1.png" alt="Logo Bro's burger"
         class="w-32 h32 rounded-full shadow-lg hover:sacle-110 duration-200">
-      <h1 class="text-4xl mt-4 mb-2 font-bold text-white">Bro's Burguer</h1>
+      <h1 class="text-4xl mt-4 mb-2 font-bold text-white">Bro's burger</h1>
   
       <span class="text-white font-medium">Rua Gen. Santos 324, Araraquara - MG</span>
   
@@ -23,8 +27,249 @@
     </div>
   </header>
   
-  <!--MENU-->
   <h2 class="text-2xl md:text-3xl font-bold text-center mt-9 mb-6"> Conheça nosso menu</h2>
+  <!--MENU-->
+  <div id="menu">
+    <main class="grid grid-cols-1 md:grid-cols-2 md:gap-10 gap-7 mx-16 max-w-7xl px-2 mb-16">
+      <div class="flex gap-2 ">
+        <img src="./assets/imagens/hamb-1.png" alt="Smashburger"
+          class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300">
+  
+        <div>
+          <p class="font-bold">Double Bro Clássico</p>
+          <p class="text-sm">Pão cervejinha,maionese artesal, queijo cheddar, 2 burgers de 190g e fatias
+            de bacon.</p>
+  
+          <div class=" flex items-center gap-2 justify-between mt-3">
+            <p class="font-bold text-lg">R$28.90</p>
+            <button class="bg-gray-900 px-5 rounded add-to-cart-btn" data-name="Double Bro Clássico" data-price="28.90">
+              <i class='bx bxs-cart-add text-2xl' style='color:#ffffff'></i>
+            </button>
+          </div>
+  
+        </div>
+  
+      </div>
+  
+      <!--Produto 2-->
+      <div class="flex gap-2 ">
+        <img src="./assets/imagens/hamb-2.png" alt="Smashburger"
+          class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300">
+  
+        <div>
+          <p class="font-bold">Big Bro</p>
+          <p class="text-sm">Pão brioche, queijo prato, 2 burgers 220g, fatias de bacon e molho barbecue</p>
+  
+          <div class=" flex items-center gap-2 justify-between mt-3">
+            <p class="font-bold text-lg">R$35.90</p>
+            <button class="bg-gray-900 px-5 rounded add-to-cart-btn" data-name="Big Bro" data-price="35.90">
+              <i class='bx bxs-cart-add text-2xl' style='color:#ffffff'></i>
+            </button>
+          </div>
+  
+        </div>
+  
+      </div>
+  
+      <!-- Produto 3 -->
+      <div class="flex gap-2 ">
+        <img src="./assets/imagens/hamb-3.png" alt="Smashburger"
+          class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300">
+  
+        <div>
+          <p class="font-bold">Baby Bro</p>
+          <p class="text-sm">Pão brioche prensado, queijo cheddar duplo, 2 burgers 130g, maionese artesanal</p>
+  
+          <div class=" flex items-center gap-2 justify-between mt-3">
+            <p class="font-bold text-lg">R$23.90</p>
+            <button class="bg-gray-900 px-5 rounded add-to-cart-btn" data-name="Baby Bro" data-price="23.90">
+              <i class='bx bxs-cart-add text-2xl' style='color:#ffffff'></i>
+            </button>
+          </div>
+  
+        </div>
+  
+      </div>
+  
+      <!--Produto 4-->
+      <div class="flex gap-2 ">
+        <img src="./assets/imagens/hamb-4.png" alt="Smashburger"
+          class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300">
+  
+        <div>
+          <p class="font-bold">Chicken Bro</p>
+          <p class="text-sm">Pão brioche, queijo cheddar duplo, frango empanado, alface, cebola, picles, tomate e molho
+            Bro</p>
+  
+          <div class=" flex items-center gap-2 justify-between mt-3">
+            <p class="font-bold text-lg">R$25.90</p>
+            <button class="bg-gray-900 px-5 rounded add-to-cart-btn" data-name="Chicken Bro" data-price="25.90">
+              <i class='bx bxs-cart-add text-2xl' style='color:#ffffff'></i>
+            </button>
+          </div>
+  
+        </div>
+  
+      </div>
+
+      <!--Produto 5-->
+      <div class="flex gap-2 ">
+        <img src="./assets/imagens/hamb-5.png" alt="Smashburger"
+          class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300">
+      
+        <div>
+          <p class="font-bold">Cheese Bro</p>
+          <p class="text-sm">Pão brioche, queijo cheddar duplo, burger 190g, alface, cebola, picles, tomate e molho
+            Bro</p>
+      
+          <div class=" flex items-center gap-2 justify-between mt-3">
+            <p class="font-bold text-lg">R$29.90</p>
+            <button class="bg-gray-900 px-5 rounded add-to-cart-btn" data-name="Cheese Bro" data-price="29.90">
+              <i class='bx bxs-cart-add text-2xl' style='color:#ffffff'></i>
+            </button>
+          </div>
+      
+        </div>
+      
+      </div>
+      <!--Produto 6-->
+      <div class="flex gap-2 ">
+        <img src="./assets/imagens/hamb-6.png" alt="Smashburger"
+          class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300">
+  
+        <div>
+          <p class="font-bold">Purple Bro</p>
+          <p class="text-sm">Pão com gergelim, queijo mussarela, burger 190g, cebola roxa, molho barbecue, alface e
+            tomate</p>
+  
+          <div class=" flex items-center gap-2 justify-between mt-3">
+            <p class="font-bold text-lg">R$25.90</p>
+            <button class="bg-gray-900 px-5 rounded add-to-cart-btn" data-name="Purple Bro" data-price="25.90">
+              <i class='bx bxs-cart-add text-2xl' style='color:#ffffff'></i>
+            </button>
+          </div>
+  
+        </div>
+  
+      </div>
+  
+  
+      <!--Produto 7-->
+  
+      <div class="flex gap-2 ">
+        <img src="./assets/imagens/hamb-7.png" alt="Smashburger"
+          class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300">
+  
+        <div>
+          <p class="font-bold">Brother-in-law</p>
+          <p class="text-sm">Pão cervejinha, onion rings, burger 150g, molho barbecue e queijo prato</p>
+  
+          <div class=" flex items-center gap-2 justify-between mt-3">
+            <p class="font-bold text-lg">R$35.90</p>
+            <button class="bg-gray-900 px-5 rounded add-to-cart-btn" data-name="Brother-in-law" data-price="35.90">
+              <i class='bx bxs-cart-add text-2xl' style='color:#ffffff'></i>
+            </button>
+          </div>
+  
+        </div>
+  
+      </div>
+  
+      <!--Produto 8-->
+  
+      <div class="flex gap-2 ">
+        <img src="./assets/imagens/hamb-8.png" alt="Smashburger"
+          class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300">
+  
+        <div>
+          <p class="font-bold">Hippie Bro</p>
+          <p class="text-sm">Pão brioche, burger de soja 150g, alface, cenoura, tomate, cebola, beterraba, molho especial
+            de feijão</p>
+  
+          <div class=" flex items-center gap-2 justify-between mt-3">
+            <p class="font-bold text-lg">R$35.90</p>
+            <button class="bg-gray-900 px-5 rounded add-to-cart-btn" data-name="Brother-in-law" data-price="35.90">
+              <i class='bx bxs-cart-add text-2xl' style='color:#ffffff'></i>
+            </button>
+          </div>
+  
+        </div>
+  
+      </div>
+  
+    </main>
+
+    <div class="mx-16 max-w-7xl px-2 my-2">
+      <h2 class="font-bold text-3xl">
+        Bebidas
+      </h2>
+    </div>
+    <!--Bebida 1-->
+    <div class="grid grid-cols-1 md:grid-cols-2 md:gap-10 gap-7 mx-16 max-w-7xl px-2 mb-16" id="menu">
+    
+      <div class="flex gap-2  w-full">
+        <img src="./assets/imagens/refri-1.png" alt="lata de Coca-cola"
+          class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300">
+    
+        <div class="w-full">
+          <p class="font-bold">Coca lata</p>
+    
+          <div class=" flex items-center gap-2 justify-between mt-3">
+            <p class="font-bold text-lg">R$5.50</p>
+            <button class="bg-gray-900 px-5 rounded add-to-cart-btn" data-name="Coca lata" data-price="5.50">
+              <i class='bx bxs-cart-add text-2xl' style='color:#ffffff'></i>
+            </button>
+          </div>
+        </div>
+      </div>
+      <!--Bebida 2-->
+      <div class="flex gap-2  w-full">
+        <img src="./assets/imagens/refri-2.png" alt="lata de Guaraná"
+          class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300">
+    
+        <div class="w-full">
+          <p class="font-bold">Guaraná lata</p>
+    
+          <div class=" flex items-center gap-2 justify-between mt-3">
+            <p class="font-bold text-lg">R$4.50</p>
+            <button class="bg-gray-900 px-5 rounded add-to-cart-btn" data-name="Guarana lata" data-price="4.50">
+              <i class='bx bxs-cart-add text-2xl' style='color:#ffffff'></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <!--MODAL CART-->
+    <div class="bg-black/60 w-full h-full fixed top-0 left-0 z-[99] items-center justify-center hidden">
+      <div class="bg-white p-5 rounded-md min-w-[90%] md:min-w-[600px]">
+        <h2 class="text-center font-bold text-2xl mb-2">Meu Carrinho</h2>
+    
+        <div id="cart-items" class="flex justify-between mb-2 flex-col">
+          <p class="font-bold">Total: <span id="cart-total">0.00</span></p>
+          <p class="font-bold mt-4">Endereço de entrega:</p>
+          <input type="text" placeholder="Digite seu endereço completo" id="address"
+            class="w-full border-2 p-1 rounded my-1">
+          <p class="text-red-500 font-bold hidden" id="address-warn">Endereço inválido</p>
+    
+          <div class="flex items-center justify-between mt-5 w-full">
+            <button id="close-modal-btn">Fechar</button>
+            <button id="checkout-btn" class="bg-green-500 text-white px-4 py-1 rounded">Finalizar pedido</button>
+          </div>
+        </div>
+        </div>
+      </div>
+      <!--FIM MODAL CART-->
+      
+      <!--Button cart footer-->
+      <footer class="w-full bg-red-500 py-3 fixed bottom-0 z-40 flex items-center justify-center" id="cart-btn">
+        <button class="flex items-center gap-2 text-white font-bold">
+          (<span id="cart-count">0</span>)
+          Ver pedido
+          <i class='bx bxs-cart-add text-2xl' style='color:#ffffff'></i </button>
+      </footer>
+      <!--Fim do button cart footer-->
+
   <script src="assets/js/main.js"></script>
 </body>
 </html>
