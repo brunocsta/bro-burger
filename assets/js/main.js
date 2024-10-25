@@ -11,7 +11,6 @@ const addressWarn = document.querySelector("#address-warn");
 
 let cart = [];
 
-
 //abre o carrinho
 cartBtn.addEventListener("click", function () {
   cartModal.classList.add("flex");
@@ -127,3 +126,16 @@ function removeItemCart(name) {
     updateCartModal();
   }
 }
+
+addressInput.addEventListener("input", function (e) {
+  let inputValue = e.target.value;
+});
+
+checkoutBtn.addEventListener("click", function () {
+  if (cart.length === 0) return;
+
+  if (addressInput.value === "") {
+    addressWarn.classList.remove("hidden");
+    addressInput.classList.add("border-red-500");
+  }
+});
