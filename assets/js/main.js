@@ -16,6 +16,7 @@ let cart = [];
 cartBtn.addEventListener("click", function () {
   cartModal.classList.add("flex");
   cartModal.classList.remove("hidden");
+  updateCartModal();
 });
 
 cartModal.addEventListener("click", function (e) {
@@ -44,12 +45,10 @@ menu.addEventListener("click", function (e) {
 });
 
 function addToCart(name, price) {
-  const existingItem = cart.find((item) => item.name === name); //item.name === name);
-  // console.log();
+  const existingItem = cart.find((item) => item.name === name);
 
   if (existingItem) {
     existingItem.quantity += 1;
-    console.log(existingItem);
   } else {
     cart.push({
       name,
@@ -67,12 +66,19 @@ function updateCartModal() {
 
   cart.forEach((item) => {
     const cartItemElement = document.createElement("div");
+    cartItemElement.classList.add(
+      "flex",
+      "justify-between",
+      "mb-4",
+      "flex-col"
+    );
+
     cartItemElement.innerHTML = `
-      <div>
+      <div class="flex items-center justiry-between">
         <div>
-          <p>${item.name}</p>
-          <p>${item.quantity}</p>
-          <p>${item.price}</p>
+          <p class="font-medium">${item.name}</p>
+          <p>Qtd: ${item.quantity}</p>
+          <p class="font-medium mt-2">${item.price}</p>
         </div>
   
         <div>
@@ -83,6 +89,12 @@ function updateCartModal() {
       </div>
     `;
 
+    total += item.price * item.quantity;
     cartItemsContainer.appendChild(cartItemElement);
+  });
+
+  cartTotal.textContent = total.toLocaleString("pt-BR", {
+    style: "currency",
+    currency: "BRL",
   });
 }
