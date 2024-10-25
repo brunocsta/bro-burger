@@ -74,18 +74,18 @@ function updateCartModal() {
     );
 
     cartItemElement.innerHTML = `
-      <div class="flex items-center justiry-between">
+      <div class="flex items-center justify-between">
         <div>
           <p class="font-medium">${item.name}</p>
           <p>Qtd: ${item.quantity}</p>
           <p class="font-medium mt-2">${item.price}</p>
         </div>
   
-        <div>
-          <button>
-            Remover
-          </button>
-        </div>
+
+        <button class="remove-btn" data-name="${item.name}">
+          Remover
+        </button>
+
       </div>
     `;
 
@@ -97,4 +97,33 @@ function updateCartModal() {
     style: "currency",
     currency: "BRL",
   });
+
+  //optei apenas pela quantidade de tipo de itens
+  //A quantidade de cada tipo de item já ta especificada no modal e ficaria
+  //redundante
+  cartCounter.innerHTML = cart.length;
+}
+
+cartItemsContainer.addEventListener("click", function (e) {
+  if (e.target.classList.contains("remove-btn")) {
+    const name = e.target.getAttribute("data-name");
+    removeItemCart(name);
+  }
+});
+
+function removeItemCart(name) {
+  const index = cart.findIndex((item) => item.name === name);
+
+  if (index !== -1) {
+    const item = cart[index];
+
+    if (item.quantity > 1) {
+      item.quantity -= 1;
+      updateCartModal();
+      return;
+    }
+
+    cart.splice(index, 1);
+    updateCartModal();
+  }
 }
