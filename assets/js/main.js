@@ -143,9 +143,10 @@ checkoutBtn.addEventListener("click", function () {
     return;
   }
 
+  //const isOpen = checkRestaurantOpen();
   if (!isOpen) {
     addressWarn.innerHTML =
-      "Restaurante fechado! Horário: Seg à Dom - 18:00 às 22:00";
+      "RESTAURANTE FECHADO NO MOMENTO! Horário: Seg à Dom - 18:00 às 22:00";
     addressWarn.classList.remove("hidden");
     return;
   }
