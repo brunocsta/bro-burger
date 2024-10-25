@@ -8,6 +8,7 @@ const closeModalBtn = document.querySelector("#close-modal-btn");
 const cartCounter = document.querySelector("#cart-count");
 const addressInput = document.querySelector("#address");
 const addressWarn = document.querySelector("#address-warn");
+const dateSpan = document.querySelector("#date-span");
 
 let cart = [];
 
@@ -129,6 +130,10 @@ function removeItemCart(name) {
 
 addressInput.addEventListener("input", function (e) {
   let inputValue = e.target.value;
+  if (inputValue !== "") {
+    addressInput.classList.remove("border-red-500");
+    addressWarn.classList.add("hidden");
+  }
 });
 
 checkoutBtn.addEventListener("click", function () {
@@ -139,3 +144,19 @@ checkoutBtn.addEventListener("click", function () {
     addressInput.classList.add("border-red-500");
   }
 });
+
+function checkRestaurantOpen() {
+  const date = new Date();
+  const hour = date.getHours();
+  return hour >= 18 && hour < 22;
+  //true => aberto
+}
+
+const isOpen = checkRestaurantOpen();
+if (isOpen) {
+  dateSpan.classList.remove("bg-red-500");
+  dateSpan.classList.add("bg-green-600");
+} else {
+  dateSpan.classList.add("bg-red-500");
+  dateSpan.classList.remove("bg-green-600");
+}
