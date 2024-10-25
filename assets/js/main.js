@@ -11,6 +11,8 @@ const addressWarn = document.querySelector("#address-warn");
 
 let cart = [];
 
+
+//abre o carrinho
 cartBtn.addEventListener("click", function () {
   cartModal.classList.add("flex");
   cartModal.classList.remove("hidden");
@@ -42,10 +44,12 @@ menu.addEventListener("click", function (e) {
 });
 
 function addToCart(name, price) {
-  const existingItem = cart.find((item) => item.name === name);
+  const existingItem = cart.find((item) => item.name === name); //item.name === name);
+  // console.log();
+
   if (existingItem) {
     existingItem.quantity += 1;
-    return;
+    console.log(existingItem);
   } else {
     cart.push({
       name,
@@ -53,10 +57,12 @@ function addToCart(name, price) {
       quantity: 1,
     });
   }
+
   updateCartModal();
 }
 
 function updateCartModal() {
+  cartItemsContainer.innerHTML = "";
   let total = 0;
 
   cart.forEach((item) => {
