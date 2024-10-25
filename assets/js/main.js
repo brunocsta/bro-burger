@@ -137,7 +137,18 @@ addressInput.addEventListener("input", function (e) {
 });
 
 checkoutBtn.addEventListener("click", function () {
-  if (cart.length === 0) return;
+  if (cart.length === 0) {
+    addressWarn.innerHTML = "Impossível finalizar pedido vazio!";
+    addressWarn.classList.remove("hidden");
+    return;
+  }
+
+  if (!isOpen) {
+    addressWarn.innerHTML =
+      "Restaurante fechado! Horário: Seg à Dom - 18:00 às 22:00";
+    addressWarn.classList.remove("hidden");
+    return;
+  }
 
   if (addressInput.value === "") {
     addressWarn.classList.remove("hidden");
