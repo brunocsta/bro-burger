@@ -98,9 +98,6 @@ function updateCartModal() {
     currency: "BRL",
   });
 
-  //optei apenas pela quantidade de tipo de itens
-  //A quantidade de cada tipo de item já ta especificada no modal e ficaria
-  //redundante
   cartCounter.innerHTML = cart.length;
 }
 
@@ -143,7 +140,6 @@ checkoutBtn.addEventListener("click", function () {
     return;
   }
 
-  //const isOpen = checkRestaurantOpen();
   if (!isOpen) {
     addressWarn.innerHTML =
       "RESTAURANTE FECHADO NO MOMENTO! Horário: Seg à Dom - 18:00 às 22:00";
@@ -155,13 +151,31 @@ checkoutBtn.addEventListener("click", function () {
     addressWarn.classList.remove("hidden");
     addressInput.classList.add("border-red-500");
   }
+
+  const cartItems = cart
+    .map((item) => {
+      return `
+      ${item.name} Quantidade: ${item.quantity} Preço: R$${item.price} | `;
+    })
+    .join("");
+
+  const message = encodeURIComponent(cartItems);
+  const phone = "51994069404";
+
+  window.open(
+    `https://wa.me/${phone}?text= Boa noite! Gostaria de pedir: ${message} Endereço: ${addressInput.value}`,
+    "_blank"
+  );
+
+  cart.length = [];
+  updateCartModal();
 });
 
 function checkRestaurantOpen() {
   const date = new Date();
   const hour = date.getHours();
+  //return hour < 22;
   return hour >= 18 && hour < 22;
-  //true => aberto
 }
 
 const isOpen = checkRestaurantOpen();
