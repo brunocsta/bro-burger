@@ -6,7 +6,7 @@ O Cardápio Bro's Burger é um projeto web desenvolvido com o objetivo de simula
 
 ## Link do Projeto
 
-Você pode acessar o projeto clicando aqui: [Bro Burger] (https://bro-burger.vercel.app/)
+Você pode acessar o projeto clicando aqui: [Bro Burger](https://bro-burger.vercel.app/)
 
 
 ## Tecnologias do Projeto
